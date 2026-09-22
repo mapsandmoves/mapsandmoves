@@ -21,7 +21,7 @@
   --bg: var(--cream);
   --text: var(--plum);
   --muted: var(--plum-soft);
-  --ring: #1F6FEB;
+  --ring: var(--terracotta-deep);   /* AA non-text contrast on cream/white (~5.6:1) */
 
   /* type */
   --font-display: "Fraunces", Georgia, "Times New Roman", serif;
@@ -294,6 +294,11 @@ h3 { font-size: 1.35rem; }
 .reel-meta strong { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; }
 .reel-meta span { font-size: .875rem; color: rgba(255, 246, 236, .85); }
 
+/* Real Instagram reel embeds: let Instagram's widget size itself instead of the 9/16 photo-card treatment */
+.reel--ig { aspect-ratio: auto; overflow: visible; box-shadow: none; background: none; display: flex; align-items: flex-start; }
+.reel--ig::after { display: none; }
+.reel--ig .instagram-media { width: 100% !important; min-width: 0 !important; margin: 0 !important; }
+
 .play {
   display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 50%;
   background: rgba(255, 246, 236, .95); color: var(--terracotta);
@@ -316,6 +321,7 @@ h3 { font-size: 1.35rem; }
 .dest-media { aspect-ratio: 4 / 3; }
 .dest-body { padding: 22px 24px 20px; display: grid; gap: 6px; }
 .dest-place { display: inline-flex; align-items: center; gap: 6px; font-size: .875rem; font-weight: 600; color: var(--terracotta); }
+.dest-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 4px; }
 
 /* ---------- Video gallery ---------- */
 .video-gallery { display: grid; gap: 16px; }
@@ -341,6 +347,11 @@ h3 { font-size: 1.35rem; }
 .ig-hover { position: absolute; inset: 0; z-index: 2; display: grid; place-items: center; color: #fff; background: rgba(46, 26, 47, .5); opacity: 0; transition: opacity .25s var(--ease); }
 .ig-tile:hover .ig-hover, .ig-tile:focus-visible .ig-hover { opacity: 1; }
 @media (min-width: 720px) { .ig-grid { grid-template-columns: repeat(4, 1fr); } }
+
+/* ---------- Brands ---------- */
+.brand-card { padding: 30px 24px; display: grid; gap: 10px; justify-items: start; text-align: left; }
+.brand-mark { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 1.4rem; color: var(--plum); }
+.brand-card .link-arrow { margin-top: 4px; }
 
 /* ---------- Collabs ---------- */
 .service { padding: 28px; display: grid; gap: 10px; align-content: start; }

@@ -9,10 +9,9 @@
 const SITE = {
   email: 'hello@example.com',
   social: {
-    instagram: { url: 'https://instagram.com/yourhandle', handle: '@yourhandle' },
-    youtube:   { url: 'https://youtube.com/@yourhandle',  handle: '@yourhandle' },
+    instagram: { url: 'https://www.instagram.com/mapsandmoves?stkn=bm1lZGI2Mnp3YWh3', handle: '@mapsandmoves' },
+    youtube:   { url: 'https://www.youtube.com/@mapsandmoves',  handle: '@mapsandmoves' },
     facebook:  { url: 'https://facebook.com/yourhandle',  handle: '@yourhandle' },
-    x:         { url: 'https://x.com/yourhandle',         handle: '@yourhandle' },
   },
 };
 
@@ -99,59 +98,4 @@ const SITE = {
     });
   });
 
-  /* ----- Travel: region filter ----- */
-  const chips = $$('.chip');
-  const cards = $$('.dest-card');
-  chips.forEach((chip) => {
-    chip.addEventListener('click', () => {
-      const region = chip.dataset.filter;
-      chips.forEach((c) => {
-        const on = c === chip;
-        c.classList.toggle('is-active', on);
-        c.setAttribute('aria-pressed', String(on));
-      });
-      cards.forEach((card) => {
-        card.hidden = !(region === 'all' || card.dataset.region === region);
-      });
-    });
-  });
-
-  /* ----- Video gallery ----- */
-  const stage = $('#video-stage');
-  const playBtn = $('#video-play');
-  const vTitle = $('#video-title');
-  const vTag = $('#video-tag');
-  const thumbs = $$('.thumb');
-  const TONES = ['ph--sunset', 'ph--dusk', 'ph--ember', 'ph--blush', 'ph--gold', 'ph--dune'];
-
-  const showVideo = (thumb) => {
-    thumbs.forEach((t) => {
-      const on = t === thumb;
-      t.classList.toggle('is-current', on);
-      t.setAttribute('aria-pressed', String(on));
-    });
-    stage.querySelector('iframe')?.remove();
-    playBtn.hidden = false;
-    stage.classList.remove(...TONES);
-    stage.classList.add(thumb.dataset.tone);
-    stage.dataset.yt = thumb.dataset.yt || '';
-    vTitle.textContent = thumb.dataset.title;
-    vTag.textContent = thumb.dataset.tag;
-    playBtn.setAttribute('aria-label', `Play: ${thumb.dataset.title}`);
-  };
-  thumbs.forEach((t) => t.addEventListener('click', () => showVideo(t)));
-
-  // If a YouTube ID is set (data-yt on a thumb), play inline; otherwise the button opens the channel.
-  playBtn.addEventListener('click', (e) => {
-    const id = stage.dataset.yt;
-    if (!id) return;
-    e.preventDefault();
-    const frame = document.createElement('iframe');
-    frame.src = `https://www.youtube-nocookie.com/embed/${encodeURIComponent(id)}?autoplay=1&rel=0`;
-    frame.title = vTitle.textContent;
-    frame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
-    frame.allowFullscreen = true;
-    stage.appendChild(frame);
-    playBtn.hidden = true;
-  });
 })();
