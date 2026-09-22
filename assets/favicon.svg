@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Jagriti">
+  <rect width="64" height="64" rx="16" fill="#2E1A2F"/>
+  <path d="M14 50V34a18 18 0 0 1 36 0v16z" fill="#D9542B"/>
+  <circle cx="32" cy="30" r="8" fill="#F2A93B"/>
+  <rect x="10" y="50" width="44" height="3" rx="1.5" fill="#FFF6EC"/>
+</svg>

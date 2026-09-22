@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jagriti — Dance &amp; Travel Creator</title>
+  <meta name="description" content="Jagriti is a dance and travel content creator. Watch dance reels, follow the journeys, and get in touch for brand collaborations.">
+  <meta name="theme-color" content="#FFF6EC">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400;1,9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+  <!--
+    HOW TO PERSONALISE
+    1. Social links, handles and email: edit the SITE object at the top of js/main.js.
+    2. Photos: every picture slot is a ".ph" block with a painted placeholder. To use a real photo,
+       drop it in assets/images/ and add one line inside the block, e.g.
+       <img src="assets/images/hero.jpg" alt="Jagriti dancing at sunrise in Jaipur">
+    3. All numbers, place names, video titles and body copy are PLACEHOLDERS. Replace with your own.
+  -->
+
+  <!-- Icon sprite -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <defs>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><rect width="20" height="20" x="2" y="2" rx="5" ry="5" fill="none" stroke="currentColor" stroke-width="2"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="m10 15 5-3-5-3z" fill="currentColor"/></symbol>
+      <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path fill="currentColor" d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12-7.5a1 1 0 0 0 0-1.72l-12-7.5A1 1 0 0 0 7 4.5z" fill="currentColor"/></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" fill="none" stroke="currentColor" stroke-width="2"/></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-left" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-right" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="m22 7-10 6L2 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+      <symbol id="i-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+      <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z" fill="currentColor"/></symbol>
+      <symbol id="i-sun" viewBox="0 0 100 100"><g fill="currentColor"><ellipse cx="50" cy="17" rx="9" ry="17"/><ellipse cx="50" cy="17" rx="9" ry="17" transform="rotate(45 50 50)"/><ellipse cx="50" cy="17" rx="9" ry="17" transform="rotate(90 50 50)"/><ellipse cx="50" cy="17" rx="9" ry="17" transform="rotate(135 50 50)"/><ellipse cx="50" cy="17" rx="9" ry="17" transform="rotate(180 50 50)"/><ellipse cx="50" cy="17" rx="9" ry="17" transform="rotate(225 50 50)"/><ellipse cx="50" cy="17" rx="9" ry="17" transform="rotate(270 50 50)"/><ellipse cx="50" cy="17" rx="9" ry="17" transform="rotate(315 50 50)"/></g></symbol>
+      <symbol id="i-logo" viewBox="0 0 40 40"><path d="M5 34V20a15 15 0 0 1 30 0v14z" fill="#D9542B"/><circle cx="20" cy="19" r="6.5" fill="#F2A93B"/><rect x="3" y="34" width="34" height="2.5" rx="1.25" fill="#2E1A2F"/></symbol>
+    </defs>
+  </svg>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header" id="top">
+    <div class="container header-row">
+      <a class="logo" href="#home" aria-label="Jagriti — home">
+        <svg class="logo-mark" width="34" height="34" aria-hidden="true"><use href="#i-logo"/></svg>
+        <span class="logo-word">jagriti<span class="logo-dot">.</span></span>
+      </a>
+
+      <nav class="nav" id="site-nav" aria-label="Primary">
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#reels">Dance</a></li>
+          <li><a href="#travel">Travel</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#collabs">Collabs</a></li>
+        </ul>
+        <a class="btn btn-primary nav-cta" href="#follow">Follow me</a>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg class="ic ic-open" width="26" height="26" aria-hidden="true"><use href="#i-menu"/></svg>
+        <svg class="ic ic-close" width="26" height="26" aria-hidden="true"><use href="#i-close"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" id="home">
+      <svg class="hero-burst" width="120" height="120" aria-hidden="true"><use href="#i-sun"/></svg>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="script-kicker reveal">Hey, I’m Jagriti</p>
+          <h1 class="reveal" style="--d:80ms">Dancing my way around the world.</h1>
+          <p class="lede reveal" style="--d:160ms">Choreography on city crossings, rooftops and far-off coastlines. I turn every trip into a story you can move to.</p>
+          <div class="btn-row reveal" style="--d:240ms">
+            <a class="btn btn-primary" href="#reels">Watch my reels <svg width="20" height="20" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            <a class="btn btn-outline" href="#collabs">Work with me</a>
+          </div>
+          <div class="hero-socials reveal" style="--d:320ms">
+            <span>Find me on</span>
+            <span class="rule" aria-hidden="true"></span>
+            <a class="icon-btn" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+            <a class="icon-btn" data-social="youtube" href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" aria-hidden="true"><use href="#i-youtube"/></svg></a>
+            <a class="icon-btn" data-social="facebook" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+            <a class="icon-btn" data-social="x" href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><svg width="18" height="18" aria-hidden="true"><use href="#i-x"/></svg></a>
+          </div>
+        </div>
+
+        <div class="hero-art reveal" style="--d:120ms">
+          <div class="hero-frame" aria-hidden="true"></div>
+          <div class="hero-arch ph ph--sunset" role="img" aria-label="Placeholder for a portrait of Jagriti">
+            <!-- <img src="assets/images/hero.jpg" alt="Jagriti mid-spin on a sunlit terrace"> -->
+          </div>
+          <a class="float-badge fb-1" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="22" height="22" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+          <a class="float-badge fb-2" data-social="youtube" href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg width="22" height="22" aria-hidden="true"><use href="#i-youtube"/></svg></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ REACH ============ -->
+    <section class="section section--tight" id="reach" aria-labelledby="reach-title">
+      <div class="container">
+        <h2 class="section-title center reveal" id="reach-title">A community that moves together</h2>
+        <div class="grid grid-3">
+          <article class="card stat-card reveal">
+            <span class="stat-platform"><svg width="18" height="18" aria-hidden="true"><use href="#i-instagram"/></svg> <span data-handle="instagram">@yourhandle</span></span>
+            <p class="stat-num"><span data-count="120" data-suffix="k">120k</span></p>
+            <p class="stat-label">Instagram followers</p>
+            <p class="card-text">Daily reels, behind-the-scenes and travel stories.</p>
+            <a class="btn btn-small btn-primary" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener">Follow</a>
+          </article>
+          <article class="card stat-card reveal" style="--d:100ms">
+            <span class="stat-platform"><svg width="18" height="18" aria-hidden="true"><use href="#i-youtube"/></svg> <span data-handle="youtube">@yourhandle</span></span>
+            <p class="stat-num"><span data-count="85" data-suffix="k">85k</span></p>
+            <p class="stat-label">YouTube subscribers</p>
+            <p class="card-text">Long-form dance diaries and full travel vlogs.</p>
+            <a class="btn btn-small btn-primary" data-social="youtube" href="https://youtube.com/" target="_blank" rel="noopener">Subscribe</a>
+          </article>
+          <article class="card stat-card reveal" style="--d:200ms">
+            <span class="stat-platform"><svg width="18" height="18" aria-hidden="true"><use href="#i-facebook"/></svg> <span data-handle="facebook">@yourhandle</span></span>
+            <p class="stat-num"><span data-count="40" data-suffix="k">40k</span></p>
+            <p class="stat-label">Facebook followers</p>
+            <p class="card-text">Event updates, live sessions and community chats.</p>
+            <a class="btn btn-small btn-primary" data-social="facebook" href="https://facebook.com/" target="_blank" rel="noopener">Follow</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section section--peach" id="about" aria-labelledby="about-title">
+      <div class="container about-grid">
+        <div class="about-copy reveal">
+          <h2 class="section-title" id="about-title">Movement is how I see the world</h2>
+          <p>I’m a dancer and travel creator who films choreography in the places that inspire it, from busy city crossings to quiet coastlines. This is where the reels, journeys and collaborations live.</p>
+          <p>Whether it’s a two-minute reel or a month-long trip, the goal is the same: make you want to get up, move, and go somewhere new.</p>
+          <a class="btn btn-primary" href="#collabs">Let’s collaborate</a>
+        </div>
+
+        <div class="about-art reveal" style="--d:100ms">
+          <div class="about-arch ph ph--dusk" role="img" aria-label="Placeholder for a second portrait or dance photo">
+            <!-- <img src="assets/images/about.jpg" alt="Jagriti rehearsing in a studio"> -->
+          </div>
+        </div>
+
+        <ul class="about-stats reveal" style="--d:180ms">
+          <li><span class="big" data-count="10" data-suffix="M+">10M+</span><span>Video views</span></li>
+          <li><span class="big" data-count="30" data-suffix="+">30+</span><span>Places danced</span></li>
+          <li><span class="big" data-count="200" data-suffix="+">200+</span><span>Reels shared</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ DANCE REELS ============ -->
+    <section class="section" id="reels" aria-labelledby="reels-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <p class="eyebrow">Dance</p>
+            <h2 class="section-title" id="reels-title">Reels &amp; performances</h2>
+            <p class="section-sub">Choreography from stages, streets and sunsets.</p>
+          </div>
+          <div class="scroll-controls reveal" style="--d:100ms">
+            <button class="icon-btn" type="button" data-scroll="-1" aria-label="Scroll reels left"><svg width="22" height="22" aria-hidden="true"><use href="#i-left"/></svg></button>
+            <button class="icon-btn" type="button" data-scroll="1" aria-label="Scroll reels right"><svg width="22" height="22" aria-hidden="true"><use href="#i-right"/></svg></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="reel-track" tabindex="0" role="region" aria-label="Dance reels, scrollable">
+        <a class="reel" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener">
+          <div class="reel-media ph ph--stage ph--stage-a" aria-hidden="true"></div>
+          <span class="play"><svg width="26" height="26" aria-hidden="true"><use href="#i-play"/></svg></span>
+          <span class="reel-meta"><strong>Sunrise flow</strong><span>Solo · Contemporary</span></span>
+        </a>
+        <a class="reel" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener">
+          <div class="reel-media ph ph--stage ph--stage-b" aria-hidden="true"></div>
+          <span class="play"><svg width="26" height="26" aria-hidden="true"><use href="#i-play"/></svg></span>
+          <span class="reel-meta"><strong>Street rhythm</strong><span>City crossing · Freestyle</span></span>
+        </a>
+        <a class="reel" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener">
+          <div class="reel-media ph ph--stage ph--stage-c" aria-hidden="true"></div>
+          <span class="play"><svg width="26" height="26" aria-hidden="true"><use href="#i-play"/></svg></span>
+          <span class="reel-meta"><strong>Golden hour</strong><span>Beach · Choreography</span></span>
+        </a>
+        <a class="reel" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener">
+          <div class="reel-media ph ph--stage ph--stage-d" aria-hidden="true"></div>
+          <span class="play"><svg width="26" height="26" aria-hidden="true"><use href="#i-play"/></svg></span>
+          <span class="reel-meta"><strong>Stage night</strong><span>Live performance</span></span>
+        </a>
+        <a class="reel" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener">
+          <div class="reel-media ph ph--stage ph--stage-a" aria-hidden="true"></div>
+          <span class="play"><svg width="26" height="26" aria-hidden="true"><use href="#i-play"/></svg></span>
+          <span class="reel-meta"><strong>Rooftop session</strong><span>Trending audio</span></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ============ TRAVEL ============ -->
+    <section class="section section--peach" id="travel" aria-labelledby="travel-title">
+      <div class="container">
+        <div class="section-head">
+          <div class="reveal">
+            <p class="eyebrow">Travel</p>
+            <h2 class="section-title" id="travel-title">Where I’ve danced</h2>
+            <p class="section-sub">Every place gets a choreography and a story.</p>
+          </div>
+          <div class="chips reveal" style="--d:100ms" role="group" aria-label="Filter destinations by region">
+            <button class="chip is-active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="chip" type="button" data-filter="asia" aria-pressed="false">Asia</button>
+            <button class="chip" type="button" data-filter="europe" aria-pressed="false">Europe</button>
+            <button class="chip" type="button" data-filter="africa" aria-pressed="false">Africa</button>
+          </div>
+        </div>
+
+        <div class="grid grid-3 dest-grid">
+          <article class="card dest-card reveal" data-region="asia">
+            <div class="dest-media ph ph--sunset" role="img" aria-label="Placeholder photo of Jaipur"></div>
+            <div class="dest-body">
+              <p class="dest-place"><svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg> Rajasthan, India</p>
+              <h3>Jaipur</h3>
+              <p class="card-text">Dancing through pink-stone courtyards at first light.</p>
+              <a class="link-arrow" href="#videos">See the story <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="card dest-card reveal" style="--d:80ms" data-region="asia">
+            <div class="dest-media ph ph--ember" role="img" aria-label="Placeholder photo of Bali"></div>
+            <div class="dest-body">
+              <p class="dest-place"><svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg> Bali, Indonesia</p>
+              <h3>Bali</h3>
+              <p class="card-text">Rice terraces, temple steps and slow sunsets.</p>
+              <a class="link-arrow" href="#videos">See the story <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="card dest-card reveal" style="--d:160ms" data-region="asia">
+            <div class="dest-media ph ph--blush" role="img" aria-label="Placeholder photo of Kyoto"></div>
+            <div class="dest-body">
+              <p class="dest-place"><svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg> Kansai, Japan</p>
+              <h3>Kyoto</h3>
+              <p class="card-text">Quiet lanes, lantern light and a very early start.</p>
+              <a class="link-arrow" href="#videos">See the story <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="card dest-card reveal" data-region="europe">
+            <div class="dest-media ph ph--gold" role="img" aria-label="Placeholder photo of Lisbon"></div>
+            <div class="dest-body">
+              <p class="dest-place"><svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg> Portugal</p>
+              <h3>Lisbon</h3>
+              <p class="card-text">Tram-line hills and tiled walls as a backdrop.</p>
+              <a class="link-arrow" href="#videos">See the story <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="card dest-card reveal" style="--d:80ms" data-region="europe">
+            <div class="dest-media ph ph--dusk" role="img" aria-label="Placeholder photo of Santorini"></div>
+            <div class="dest-body">
+              <p class="dest-place"><svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg> Cyclades, Greece</p>
+              <h3>Santorini</h3>
+              <p class="card-text">White walls, blue domes and a caldera view.</p>
+              <a class="link-arrow" href="#videos">See the story <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+          <article class="card dest-card reveal" style="--d:160ms" data-region="africa">
+            <div class="dest-media ph ph--dune" role="img" aria-label="Placeholder photo of Marrakech"></div>
+            <div class="dest-body">
+              <p class="dest-place"><svg width="16" height="16" aria-hidden="true"><use href="#i-pin"/></svg> Morocco</p>
+              <h3>Marrakech</h3>
+              <p class="card-text">Market colour, rooftop terraces and desert light.</p>
+              <a class="link-arrow" href="#videos">See the story <svg width="18" height="18" aria-hidden="true"><use href="#i-arrow"/></svg></a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VIDEOS ============ -->
+    <section class="section" id="videos" aria-labelledby="videos-title">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <p class="eyebrow">Watch</p>
+          <h2 class="section-title" id="videos-title">Featured videos</h2>
+          <p class="section-sub">Full dance diaries and travel vlogs on YouTube.</p>
+        </div>
+
+        <div class="video-gallery reveal">
+          <div class="video-stage ph ph--sunset" id="video-stage" data-yt="">
+            <a class="play play--lg" id="video-play" data-social="youtube" href="https://youtube.com/" target="_blank" rel="noopener" aria-label="Play: Dance diary, sunrise in Jaipur">
+              <svg width="34" height="34" aria-hidden="true"><use href="#i-play"/></svg>
+            </a>
+            <div class="video-caption">
+              <span class="tag" id="video-tag">Dance diary</span>
+              <strong id="video-title">Sunrise in Jaipur</strong>
+            </div>
+          </div>
+
+          <ul class="video-thumbs" role="list">
+            <li><button class="thumb is-current" type="button" data-title="Sunrise in Jaipur" data-tag="Dance diary" data-tone="ph--sunset" data-yt="" aria-label="Show: Sunrise in Jaipur" aria-pressed="true"><span class="ph ph--sunset"></span><svg width="22" height="22" aria-hidden="true"><use href="#i-play"/></svg></button></li>
+            <li><button class="thumb" type="button" data-title="Packing for a 30-day trip" data-tag="Travel vlog" data-tone="ph--gold" data-yt="" aria-label="Show: Packing for a 30-day trip" aria-pressed="false"><span class="ph ph--gold"></span><svg width="22" height="22" aria-hidden="true"><use href="#i-play"/></svg></button></li>
+            <li><button class="thumb" type="button" data-title="Dancing in the streets of Lisbon" data-tag="Choreography" data-tone="ph--dusk" data-yt="" aria-label="Show: Dancing in the streets of Lisbon" aria-pressed="false"><span class="ph ph--dusk"></span><svg width="22" height="22" aria-hidden="true"><use href="#i-play"/></svg></button></li>
+            <li><button class="thumb" type="button" data-title="A day in Bali" data-tag="Travel vlog" data-tone="ph--ember" data-yt="" aria-label="Show: A day in Bali" aria-pressed="false"><span class="ph ph--ember"></span><svg width="22" height="22" aria-hidden="true"><use href="#i-play"/></svg></button></li>
+          </ul>
+        </div>
+
+        <p class="center reveal" style="margin-top:32px"><a class="btn btn-primary" data-social="youtube" href="https://youtube.com/" target="_blank" rel="noopener">View all videos</a></p>
+      </div>
+    </section>
+
+    <!-- ============ INSTAGRAM ============ -->
+    <section class="section section--peach" id="instagram" aria-labelledby="ig-title">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <h2 class="section-title" id="ig-title">Follow me on Instagram</h2>
+          <p class="section-sub"><span data-handle="instagram">@yourhandle</span></p>
+        </div>
+
+        <div class="ig-grid">
+          <a class="ig-tile reveal" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="View on Instagram"><span class="ph ph--sunset"></span><span class="ig-hover"><svg width="26" height="26" aria-hidden="true"><use href="#i-heart"/></svg></span></a>
+          <a class="ig-tile reveal" style="--d:70ms" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="View on Instagram"><span class="ph ph--dusk"></span><span class="ig-hover"><svg width="26" height="26" aria-hidden="true"><use href="#i-heart"/></svg></span></a>
+          <a class="ig-tile reveal" style="--d:140ms" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="View on Instagram"><span class="ph ph--gold"></span><span class="ig-hover"><svg width="26" height="26" aria-hidden="true"><use href="#i-heart"/></svg></span></a>
+          <a class="ig-tile reveal" style="--d:210ms" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="View on Instagram"><span class="ph ph--ember"></span><span class="ig-hover"><svg width="26" height="26" aria-hidden="true"><use href="#i-heart"/></svg></span></a>
+        </div>
+
+        <p class="center reveal" style="margin-top:32px"><a class="btn btn-primary" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener">Follow me</a></p>
+      </div>
+    </section>
+
+    <!-- ============ COLLABS ============ -->
+    <section class="section" id="collabs" aria-labelledby="collabs-title">
+      <div class="container">
+        <div class="section-head section-head--center reveal">
+          <p class="eyebrow">Collaborations</p>
+          <h2 class="section-title" id="collabs-title">Let’s create something together</h2>
+          <p class="section-sub">Brands, tourism boards and dance studios: I’d love to hear your idea.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card service reveal">
+            <h3>Sponsored content</h3>
+            <p class="card-text">Reels and short videos that fit naturally into my dance and travel feed.</p>
+          </article>
+          <article class="card service reveal" style="--d:100ms">
+            <h3>Destination campaigns</h3>
+            <p class="card-text">Choreography filmed on location to showcase a place, hotel or experience.</p>
+          </article>
+          <article class="card service reveal" style="--d:200ms">
+            <h3>Dance &amp; workshops</h3>
+            <p class="card-text">Guest choreography, classes and live sessions with your community.</p>
+          </article>
+        </div>
+
+        <div class="partners reveal" aria-label="Past partners (placeholders)">
+          <p class="partners-label">Trusted by</p>
+          <ul role="list">
+            <li>Brand One</li>
+            <li>Studio Two</li>
+            <li>Travel Three</li>
+            <li>Label Four</li>
+            <li>Partner Five</li>
+          </ul>
+        </div>
+
+        <div class="cta-band reveal">
+          <div>
+            <h3>Ready to work together?</h3>
+            <p>Send a note and I’ll reply with rates and availability.</p>
+          </div>
+          <div class="btn-row">
+            <a class="btn btn-light" data-mail="Media kit request" href="mailto:hello@example.com?subject=Media%20kit%20request">Request media kit</a>
+            <a class="btn btn-marigold" data-mail="Collaboration enquiry" href="mailto:hello@example.com?subject=Collaboration%20enquiry"><svg width="20" height="20" aria-hidden="true"><use href="#i-mail"/></svg> Email me</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FOLLOW ============ -->
+    <section class="section section--tight follow" id="follow" aria-labelledby="follow-title">
+      <div class="container">
+        <h2 class="section-title center reveal" id="follow-title">Follow me on social media</h2>
+        <ul class="social-row reveal" role="list">
+          <li><a data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener"><span class="icon-btn icon-btn--lg"><svg width="26" height="26" aria-hidden="true"><use href="#i-instagram"/></svg></span>Instagram</a></li>
+          <li><a data-social="youtube" href="https://youtube.com/" target="_blank" rel="noopener"><span class="icon-btn icon-btn--lg"><svg width="26" height="26" aria-hidden="true"><use href="#i-youtube"/></svg></span>YouTube</a></li>
+          <li><a data-social="facebook" href="https://facebook.com/" target="_blank" rel="noopener"><span class="icon-btn icon-btn--lg"><svg width="26" height="26" aria-hidden="true"><use href="#i-facebook"/></svg></span>Facebook</a></li>
+          <li><a data-social="x" href="https://x.com/" target="_blank" rel="noopener"><span class="icon-btn icon-btn--lg"><svg width="22" height="22" aria-hidden="true"><use href="#i-x"/></svg></span>X</a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="logo" href="#home" aria-label="Jagriti — back to top">
+          <svg class="logo-mark" width="34" height="34" aria-hidden="true"><use href="#i-logo"/></svg>
+          <span class="logo-word">jagriti<span class="logo-dot">.</span></span>
+        </a>
+        <p>Dance and travel stories from wherever the music takes me.</p>
+      </div>
+
+      <nav aria-label="Footer">
+        <h2 class="footer-h">Menu</h2>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#reels">Dance</a></li>
+          <li><a href="#travel">Travel</a></li>
+          <li><a href="#videos">Videos</a></li>
+          <li><a href="#collabs">Collabs</a></li>
+        </ul>
+      </nav>
+
+      <div>
+        <h2 class="footer-h">Follow me</h2>
+        <div class="footer-icons">
+          <a class="icon-btn icon-btn--dark" data-social="instagram" href="https://instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><svg width="20" height="20" aria-hidden="true"><use href="#i-instagram"/></svg></a>
+          <a class="icon-btn icon-btn--dark" data-social="youtube" href="https://youtube.com/" target="_blank" rel="noopener" aria-label="YouTube"><svg width="20" height="20" aria-hidden="true"><use href="#i-youtube"/></svg></a>
+          <a class="icon-btn icon-btn--dark" data-social="facebook" href="https://facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg width="20" height="20" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+          <a class="icon-btn icon-btn--dark" data-social="x" href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><svg width="18" height="18" aria-hidden="true"><use href="#i-x"/></svg></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bar">
+      <p>© <span id="year">2026</span> Jagriti. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
