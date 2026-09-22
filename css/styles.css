@@ -79,6 +79,8 @@ h3 { font-size: 1.35rem; }
 .script-kicker { font-family: var(--font-display); font-style: italic; font-weight: 400; font-size: clamp(1.4rem, 2.4vw, 1.9rem); color: var(--terracotta); margin-bottom: 12px; }
 .eyebrow { text-transform: uppercase; letter-spacing: .14em; font-size: .8125rem; font-weight: 700; color: var(--terracotta); margin-bottom: 10px; }
 .section-sub { color: var(--muted); margin-top: 12px; max-width: 52ch; }
+.handle-link { color: var(--terracotta); font-weight: 600; text-underline-offset: 3px; }
+.handle-link:hover, .handle-link:focus-visible { text-decoration: underline; }
 .card-text { color: var(--muted); font-size: .975rem; }
 
 /* ---------- Buttons ---------- */
@@ -236,6 +238,7 @@ h3 { font-size: 1.35rem; }
 .hero-art { position: relative; width: min(100%, 460px); margin-inline: auto; padding: 0 0 0 24px; }
 .hero-frame { position: absolute; inset: 28px 0 -20px 44px; border: 2px solid var(--terracotta-bright); border-radius: var(--r-md); }
 .hero-arch { position: relative; aspect-ratio: 4 / 5; border-radius: 999px 999px var(--r-md) var(--r-md); box-shadow: 0 30px 50px -30px rgba(120, 50, 20, .6); }
+.hero-arch img { object-position: 50% 22%; }
 .float-badge {
   position: absolute; display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
   background: #fff; color: var(--terracotta); border: 1.5px solid var(--line-strong);
@@ -294,10 +297,27 @@ h3 { font-size: 1.35rem; }
 .reel-meta strong { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; }
 .reel-meta span { font-size: .875rem; color: rgba(255, 246, 236, .85); }
 
-/* Real Instagram reel embeds: let Instagram's widget size itself instead of the 9/16 photo-card treatment */
-.reel--ig { aspect-ratio: auto; overflow: visible; box-shadow: none; background: none; display: flex; align-items: flex-start; }
+/* Real Instagram reel embeds: keep the official embed.js widget (it plays inline via
+   postMessage instead of redirecting), but force its injected iframe to fill a fixed-size
+   crop box so every card is the same uniform shape, and add our own direct link below it. */
+.reel--ig { aspect-ratio: auto; overflow: visible; box-shadow: none; background: none; display: flex; flex-direction: column; }
 .reel--ig::after { display: none; }
-.reel--ig .instagram-media { width: 100% !important; min-width: 0 !important; margin: 0 !important; }
+.reel-frame-wrap { position: relative; height: 460px; overflow: hidden; border-radius: var(--r-md); box-shadow: var(--shadow-card); background: #fff; }
+.reel-frame-wrap .instagram-media,
+.reel-frame-wrap iframe {
+  position: absolute !important; inset: 0 !important;
+  width: 100% !important; height: 100% !important;
+  min-width: 0 !important; min-height: 0 !important; margin: 0 !important;
+}
+.reel-links { display: flex; flex-direction: column; gap: 8px; margin-top: 10px; }
+.reel-ig-link {
+  display: flex; align-items: center; justify-content: center; gap: 8px;
+  min-height: 44px; padding: 10px 16px; border-radius: var(--r-sm);
+  background: var(--plum); color: var(--cream); font-weight: 600; font-size: .875rem; text-align: center;
+  transition: background-color .2s var(--ease), color .2s var(--ease);
+}
+.reel-ig-link svg { flex-shrink: 0; }
+.reel-ig-link:hover, .reel-ig-link:focus-visible { background: var(--terracotta); color: #fff; }
 
 .play {
   display: inline-grid; place-items: center; width: 56px; height: 56px; border-radius: 50%;
@@ -320,6 +340,16 @@ h3 { font-size: 1.35rem; }
 .dest-card[hidden] { display: none; }
 .dest-media { aspect-ratio: 4 / 3; }
 .dest-body { padding: 22px 24px 20px; display: grid; gap: 6px; }
+
+/* Real Instagram reel embed inside a destination card: keep the same 4/3 photo-card
+   shape by cropping the injected iframe to fill it (same technique as the Dance reels). */
+.dest-media--ig { position: relative; overflow: hidden; background: #fff; }
+.dest-media--ig .instagram-media,
+.dest-media--ig iframe {
+  position: absolute !important; inset: 0 !important;
+  width: 100% !important; height: 100% !important;
+  min-width: 0 !important; min-height: 0 !important; margin: 0 !important;
+}
 .dest-place { display: inline-flex; align-items: center; gap: 6px; font-size: .875rem; font-weight: 600; color: var(--terracotta); }
 .dest-links { display: flex; flex-wrap: wrap; gap: 8px 20px; margin-top: 4px; }
 
@@ -348,10 +378,36 @@ h3 { font-size: 1.35rem; }
 .ig-tile:hover .ig-hover, .ig-tile:focus-visible .ig-hover { opacity: 1; }
 @media (min-width: 720px) { .ig-grid { grid-template-columns: repeat(4, 1fr); } }
 
+/* Real reel embeds in the Instagram grid: crop to the same square tile, with a small
+   corner badge linking straight to that reel (the embed itself is still click-to-play). */
+.ig-tile--ig { background: #fff; }
+.ig-tile--ig .instagram-media,
+.ig-tile--ig iframe {
+  position: absolute !important; inset: 0 !important;
+  width: 100% !important; height: 100% !important;
+  min-width: 0 !important; min-height: 0 !important; margin: 0 !important;
+}
+.ig-tile-link {
+  position: absolute; z-index: 3; top: 8px; right: 8px;
+  width: 44px; height: 44px; display: grid; place-items: center; border-radius: 50%;
+  background: rgba(46, 26, 47, .6); color: #fff; backdrop-filter: blur(2px);
+  transition: background-color .2s var(--ease);
+}
+.ig-tile-link:hover, .ig-tile-link:focus-visible { background: var(--terracotta); }
+
 /* ---------- Brands ---------- */
-.brand-card { padding: 30px 24px; display: grid; gap: 10px; justify-items: start; text-align: left; }
+.brand-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 460px), 1fr)); }
+.brand-card { display: flex; flex-wrap: wrap; align-items: stretch; padding: 0; overflow: hidden; }
+.brand-info { flex: 1 1 260px; display: grid; align-content: center; gap: 10px; padding: 28px 24px; text-align: left; }
 .brand-mark { font-family: var(--font-display); font-style: italic; font-weight: 600; font-size: 1.4rem; color: var(--plum); }
-.brand-card .link-arrow { margin-top: 4px; }
+.brand-info .link-arrow { margin-top: 4px; }
+.brand-media { position: relative; flex: 1 1 220px; min-height: 280px; overflow: hidden; background: #fff; }
+.brand-media .instagram-media,
+.brand-media iframe {
+  position: absolute !important; inset: 0 !important;
+  width: 100% !important; height: 100% !important;
+  min-width: 0 !important; min-height: 0 !important; margin: 0 !important;
+}
 
 /* ---------- Collabs ---------- */
 .service { padding: 28px; display: grid; gap: 10px; align-content: start; }

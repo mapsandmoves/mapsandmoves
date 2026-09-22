@@ -11,7 +11,7 @@ const SITE = {
   social: {
     instagram: { url: 'https://www.instagram.com/mapsandmoves?stkn=bm1lZGI2Mnp3YWh3', handle: '@mapsandmoves' },
     youtube:   { url: 'https://www.youtube.com/@mapsandmoves',  handle: '@mapsandmoves' },
-    facebook:  { url: 'https://facebook.com/yourhandle',  handle: '@yourhandle' },
+    facebook:  { url: 'https://www.facebook.com/share/19iMddtNpa/?mibextid=wwXIfr',  handle: '@mapsandmoves' },
   },
 };
 
